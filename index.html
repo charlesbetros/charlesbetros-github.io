@@ -5,20 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>Debug Console - More than just console.log()</title>
+    <meta name="description" content="Debug Console - More than just console.log()">
+    <meta name="author" content="Charles Betros">
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="lib/css/reveal.css" />
+    <link rel="stylesheet" href="lib/css/theme/mozilla-devrel-dark.css" />
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/css/an-old-hope.css">
 
     <!-- Printing and PDF exports -->
     <script>
         var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'lib/css/print/pdf.css' : 'lib/css/print/paper.css';
         document.getElementsByTagName('head')[0].appendChild(link);
     </script>
 </head>
@@ -26,50 +28,133 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section data-markdown="messages.md"></section>
+            <section>
+                <header>
+                    <h1>Debug Console</h1>
+                    <p>More than just console.log()</p>
+                </header>
+            </section>
+
+            <section>
+                <ol>
+                    <li>Writing output</li>
+                    <li>Measure and Count Executions</li>
+                    <li>Tracing and Assertions</li>
+                    <li>Viewing data objects</li>
+                </ol>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Writing output</h2>
+                </section>
+
+                <section>
+                    <p>Constant strings</p>
+                    <pre><code class="js" data-noescape data-trim>
+                            function doOutputText() {
+                                console.log("This is as basic as it gets.");
+                                console.info("An alias for console.log().");
+                                console.warn("You have no chance to survive Make your time.");
+                                console.error("All your base are belong to us!")
+                            }
+                        </code></pre>
+                    <p class="fragment">
+                        <img src="images/doOutputText.png" />
+                    </p>
+                    <aside class="notes">
+                        There are four different ways of outputting text to the console. They all work the same way except they have different severities.
+                    </aside>
+                </section>
+
+                <section>
+                    <p>Formatted strings</p>
+                    <pre><code class="js" data-noescape data-trim>
+
+                    </code></pre>
+                    <p class="fragment">
+                        <img src="images/doOutputFormatted.png" />
+                    </p>
+                </section>
+
+            </section>
+
+            <section>
+                <section>
+                    <h2>Measure and Count Executions</h2>
+                </section>
+
+                <section>
+
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Tracing and Assertions</h2>
+                </section>
+
+                <section>
+
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Viewing data objects</h2>
+                </section>
+
+                <section>
+
+                </section>
+            </section>
+
+            <section>
+                <h2>Questions?</h2>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Other resources</h2>
+                </section>
+            </section>
         </div>
     </div>
 
     <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="lib/js/reveal.min.js"></script>
 
     <script>
         Reveal.initialize({
-            dependencies: [
-                // Interpret Markdown in <section> elements
-                {
-                    src: 'plugin/markdown/marked.js',
-                    condition: function() {
-                        return !!document.querySelector('[data-markdown]');
-                    }
-                }, {
-                    src: 'plugin/markdown/markdown.js',
-                    condition: function() {
-                        return !!document.querySelector('[data-markdown]');
-                    }
-                },
+            history: true,
 
-                // Syntax highlight for <code> elements
-                {
-                    src: 'plugin/highlight/highlight.js',
-                    async: true,
-                    callback: function() {
-                        hljs.initHighlightingOnLoad();
-                    }
-                },
+            defaultTiming: 60,
 
-                // Zoom in and out with Alt+click
-                {
-                    src: 'plugin/zoom-js/zoom.js',
-                    async: true
-                },
-
-                // Speaker notes
-                {
-                    src: 'plugin/notes/notes.js',
-                    async: true
-                },
-            ]
+            dependencies: [{
+                src: "lib/js/classList.js",
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }]
         });
     </script>
 </body>
