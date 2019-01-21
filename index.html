@@ -10,7 +10,7 @@
     <meta name="author" content="Charles Betros">
 
     <link rel="stylesheet" href="lib/css/reveal.css" />
-    <link rel="stylesheet" href="lib/css/theme/mozilla-devrel-dark.css" />
+    <link rel="stylesheet" href="lib/css/mozilla-devrel-dark.css" />
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/an-old-hope.css">
@@ -32,67 +32,101 @@
                 <header>
                     <h1>Debug Console</h1>
                     <p>More than just console.log()</p>
+                    <p>Charles Betros</p>
                 </header>
             </section>
 
             <section>
                 <ol>
-                    <li>Writing output</li>
+                    <li>Writing Output</li>
                     <li>Measure and Count Executions</li>
                     <li>Tracing and Assertions</li>
-                    <li>Viewing data objects</li>
+                    <li>Viewing Data Objects</li>
                 </ol>
             </section>
 
             <section>
                 <section>
-                    <h2>Writing output</h2>
+                    <h2>Writing Output</h2>
                 </section>
 
                 <section>
-                    <p>Constant strings</p>
+                    <h3>Constant Strings</h3>
                     <pre><code class="js" data-noescape data-trim>
-                            function doOutputText() {
-                                console.log("This is as basic as it gets.");
-                                console.info("An alias for console.log().");
-                                console.warn("You have no chance to survive Make your time.");
-                                console.error("All your base are belong to us!")
-                            }
-                        </code></pre>
-                    <p class="fragment">
-                        <img src="images/doOutputText.png" />
-                    </p>
+                        console.log("This is as basic as it gets.");
+                        console.info("An alias for console.log().");
+                        console.warn("You have no chance to survive Make your time.");
+                        console.error("All your base are belong to us!")
+                    </code></pre>
+                    <img src="images/doOutputText.png" />
                     <aside class="notes">
                         There are four different ways of outputting text to the console. They all work the same way except they have different severities. You can filter by severity and the differing colors can help them stand out.
                     </aside>
                 </section>
+                <section>
+                    <h3>Constant Strings</h3>
+                    <p>You can filter by severity to show only the output you want.</p>
+                    <img src="images/filterbyloglevel.png" />
+                </section>
 
                 <section>
-                    <p>Formatted strings</p>
+                    <h3>String Substitution - Strings (%s)</h3>
                     <pre><code class="js" data-noescape data-trim>
-
+                        const name = "Charles";
+                        console.log("Hi! My name is %s.", name);
                     </code></pre>
-                    <p class="fragment">
-                        <img src="images/doOutputFormatted.png" />
-                    </p>
+                    <img src="images/doOutputFormattedString.png" />
                     <aside class="notes">
                         There a four placeholders that can be used in console output. %s is used to substitute a string. %d is used to substitute a number. %o is used to substitute and object. %c ymmv, is used to substitute css. Anyone have a good use fir this?
                     </aside>
                 </section>
+                <section>
+                    <h3>String Substitution - Numbers (%d)</h3>
+                    <pre><code class="js" data-noescape data-trim>
+                        const n = 42;
+                        console.log("The answer to the Ultimate Question is %d.", n);
+                    </code></pre>
+                    <img src="images/doOutputFormattedNumber.png" />
+                </section>
+                <section>
+                    <h3>String Substitution - Objects (%o)</h3>
+                    <pre><code class="js" data-noescape data-trim>
+                        const person = { Name: "Chuck D" };
+                        console.log("Hi! I am %o", person);
+                    </code></pre>
+                    <img src="images/doOutputFormattedObject.png" />
+                </section>
+                <section>
+                    <h3>String Substitution - CSS (%c)</h3>
+                    <pre><code class="js" data-noescape data-trim>
+                        console.log("Anyone have a good use for %cthis one?", "background-color: blue");
+                    </code></pre>
+                    <img src="images/doOutputFormattedCSS.png" />
+                    <section class="fragment">
+                        <img src="images/doOutputFormattedCSS2.png" />
+                        </p>
+                    </section>
+                </section>
 
                 <section>
-                    <p>Organizing output</p>
+                    <h3>Organizing output</h3>
                     <pre><code class="js" data-noescape data-trim>
-    
-                        </code></pre>
-                    <p class="fragment">
-                        <img src="images/doOutputGrouped.png" />
-                    </p>
+                        console.log("This is the outer level");
+                        console.group("Group");
+                        console.log("Level 2");
+                        console.groupCollapsed("Collapsed");
+                        console.log("Level 3");
+                        console.warn("More of level 3");
+                        console.groupEnd();
+                        console.log("Back to level 2");
+                        console.groupEnd();
+                        console.log("Back to the outer level");
+                    </code></pre>
+                    <img src="images/doOutputGrouped.png" />
                     <aside class="notes">
                         Grouping things simply indents output until end group.
                     </aside>
                 </section>
-
             </section>
 
             <section>
@@ -152,7 +186,14 @@
 
             <section>
                 <h2>Other resources</h2>
-
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/console">https://developer.mozilla.org/en-US/docs/Web/API/console</a>
+                    </li>
+                    <li>
+                        <a href="https://developers.google.com/web/tools/chrome-devtools/console">https://developers.google.com/web/tools/chrome-devtools/console</a>
+                    </li>
+                </ul>
             </section>
         </div>
     </div>
@@ -163,9 +204,8 @@
     <script>
         Reveal.initialize({
             history: true,
-
             defaultTiming: 60,
-
+            transition: "none",
             dependencies: [{
                 src: "lib/js/classList.js",
                 condition: function() {
