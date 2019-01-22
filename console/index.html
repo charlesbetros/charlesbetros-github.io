@@ -156,7 +156,7 @@
                     <p>Hit counts</p>
                     <pre><code class="js" data-noescape data-trim>
         
-                            </code></pre>
+                    </code></pre>
                     <p class="fragment">
                         <img src="images/doCounts.png" />
                     </p>
@@ -166,9 +166,7 @@
             </section>
 
             <section>
-                <section>
-                    <h2>Tracing and Assertions</h2>
-                </section>
+                <h3>Tracing and Assertions</h3>
 
                 <section>
 
@@ -176,13 +174,31 @@
             </section>
 
             <section>
-                <section>
-                    <h2>Viewing data objects</h2>
-                </section>
+                <h3>Viewing Data Objects</h3>
+                <pre><code class="js" data-noescape data-trim>
+                    const people = [
+                        { "Name": "Charles B", "Title": "Professional", "Skills": ["All the things"] },
+                        { "Name": "Chuck D", "Title": "Public Enemy", "Skills": ["Musician"] }
+                    ];
 
-                <section>
+                    console.table(people);
+                </code></pre>
+                <img src="images/doTable.png" />
+                <aside class="notes">
+                    Tables can sort on columns.
+                </aside>
+            </section>
+            <section>
+                <h3>Viewing Data Objects - Specify Columns</h3>
+                <pre><code class="js" data-noescape data-trim>
+                    const people = [
+                        { "Name": "Charles B", "Title": "Professional", "Skills": ["All the things"] },
+                        { "Name": "Chuck D", "Title": "Public Enemy", "Skills": ["Musician"] }
+                    ];
 
-                </section>
+                    console.table(people, ["Name"]);
+                </code></pre>
+                <img src="images/doTableSpecifyColumns.png" />
             </section>
 
             <section>
