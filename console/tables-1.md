@@ -1,11 +1,11 @@
 ### Tables 
 
 ```javascript
-    // Magic to get data from some place.
+   // Magic to get data from some place.
     const people = [
-        { "Name": "Charles B", "Title": "Professional", "Skills": ["All the things"] },
-        { "Name": "Flavor Flav", "Title": "Hype Man", "Skills": ["Musician", "Television"] },
-        { "Name": "Chuck D", "Title": "Public Enemy", "Skills": ["Musician"] }
+        { "Name": "Charles B", "Title": "Professional", "Skills": "All the things" },
+        { "Name": "Flavor Flav", "Title": "Hype Man", "Skills": "Musician" },
+        { "Name": "Chuck D", "Title": "Public Enemy", "Skills": "Musician" }
     ];
 
     console.log(people); // Not helpful...
