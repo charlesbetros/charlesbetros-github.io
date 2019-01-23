@@ -8,7 +8,8 @@ router.get("/", function(req, res) {
 });
 
 //add the router
-app.use("/", router);
+//app.use("/", router);
+app.use("/", express.static(__dirname + "/"));
 app.use("/lib/css", express.static(__dirname + "/lib/css"));
 app.use("/lib/js", express.static(__dirname + "/lib/js"));
 app.use("/plugin", express.static(__dirname + "/plugin"));
