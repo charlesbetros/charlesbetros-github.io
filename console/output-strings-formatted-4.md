@@ -4,9 +4,9 @@
 console.log("Anyone have a good use for %cthis one?", "background-color: blue");
 ```
 
-![Console text output - css](./images/doOutputFormattedCSS.png "Formatted Strings")
+![Console text output - css](./images/output-strings-formatted-4.png "Formatted Strings")
 
-![Console text output - css](./images/doOutputFormattedCSS2.png "Formatted Strings") <!-- .element class="fragment" -->
+![Console text output - css](./images/output-strings-formatted-5.png "Formatted Strings") <!-- .element class="fragment" -->
 
 Notes:
 There a four placeholders that can be used in console output.

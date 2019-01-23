@@ -1,6 +1,6 @@
 ### String Substitution - CSS (%c)
 
-![Console text output - css](./images/facebookStyledConsole.png "Formatted Strings")
+![Console text output - css](./images/output-strings-formatted-6.png "Formatted Strings")
 
 Notes:
 There a four placeholders that can be used in console output.

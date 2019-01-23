@@ -1,11 +1,11 @@
-### String Substitution - Numbers (%i / %d)
+### String Substitution - Objects (%o)
 
 ```javascript
-const n = 42;
-console.log("The answer to the Ultimate Question is %d.", n);
+const person = { Name: "Chuck D" };
+console.log("Hi! I am %o", person);
 ```
 
-![Console text output - number](./images/doOutputFormattedNumber.png "Formatted Strings")
+![Console text output - object](./images/output-strings-formatted-3.png "Formatted Strings")
 
 Notes:
 There a four placeholders that can be used in console output.

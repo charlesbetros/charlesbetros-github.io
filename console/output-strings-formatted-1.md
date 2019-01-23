@@ -5,7 +5,7 @@ const name = "Charles";
 console.log("Hi! My name is %s.", name);
 ```
 
-![Console text output - string](./images/doOutputFormattedString.png "Formatted Strings")
+![Console text output - string](./images/output-strings-formatted-1.png "Formatted Strings")
 
 Notes:
 There a four placeholders that can be used in console output.
