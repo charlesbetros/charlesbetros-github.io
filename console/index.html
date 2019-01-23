@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="lib/css/mozilla-devrel-dark.css" />
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/an-old-hope.css">
+    <link rel="stylesheet" href="lib/css/vs2015.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -29,12 +29,17 @@
     <div class="reveal">
         <div class="slides">
             <section>
+                <p>How do you comfort a JavaScript bug?</p>
+                <p class="fragment">You console it...</p>
+            </section>
+
+            <section>
                 <header>
                     <h1>Debug Console</h1>
                     <p>More than just console.log()</p>
                 </header>
                 <p>Charles Betros</p>
-                <img src="images/somepeople.jpg" />
+                <img src="./images/somepeople.jpg" />
             </section>
 
             <section>
@@ -52,74 +57,15 @@
                 </section>
 
                 <section data-markdown="1-output-constant-strings.md"></section>
-                <section>
-                    <h3>Constant Strings</h3>
-                    <p>You can filter by severity to show only the output you want.</p>
-                    <img src="images/filterbyloglevel.png" />
-                </section>
+                <section data-markdown="2-output-constant-strings.md"></section>
 
-                <section>
-                    <h3>String Substitution - Strings (%s)</h3>
-                    <pre><code class="js" data-noescape data-trim>
-                        const name = "Charles";
-                        console.log("Hi! My name is %s.", name);
-                    </code></pre>
-                    <img src="images/doOutputFormattedString.png" />
-                    <aside class="notes">
-                        There a four placeholders that can be used in console output. %s is used to substitute a string. %d is used to substitute a number. %o is used to substitute and object. %c ymmv, is used to substitute css. Anyone have a good use fir this?
-                    </aside>
-                </section>
-                <section>
-                    <h3>String Substitution - Numbers (%d)</h3>
-                    <pre><code class="js" data-noescape data-trim>
-                        const n = 42;
-                        console.log("The answer to the Ultimate Question is %d.", n);
-                    </code></pre>
-                    <img src="images/doOutputFormattedNumber.png" />
-                </section>
-                <section>
-                    <h3>String Substitution - Objects (%o)</h3>
-                    <pre><code class="js" data-noescape data-trim>
-                        const person = { Name: "Chuck D" };
-                        console.log("Hi! I am %o", person);
-                    </code></pre>
-                    <img src="images/doOutputFormattedObject.png" />
-                </section>
-                <section>
-                    <h3>String Substitution - CSS (%c)</h3>
-                    <pre><code class="js" data-noescape data-trim>
-                        console.log("Anyone have a good use for %cthis one?", "background-color: blue");
-                    </code></pre>
-                    <img src="images/doOutputFormattedCSS.png" />
-                    <section class="fragment">
-                        <img src="images/doOutputFormattedCSS2.png" />
-                        </p>
-                    </section>
-                </section>
-                <section>
-                    <h3>String Substitution - CSS (%c)</h3>
-                    <img src="images/facebookStyledConsole.png" />
-                </section>
+                <section data-markdown="1-output-formatted-strings.md"></section>
+                <section data-markdown="2-output-formatted-strings.md"></section>
+                <section data-markdown="3-output-formatted-strings.md"></section>
+                <section data-markdown="4-output-formatted-strings.md"></section>
+                <section data-markdown="5-output-formatted-strings.md"></section>
 
-                <section>
-                    <h3>Organizing output</h3>
-                    <pre><code class="js" data-noescape data-trim data-dim>
-                        console.log("This is the outer level");
-                        <mark>console.group("Group");</mark>
-                        console.log("Level 2");
-                        console.groupCollapsed("Collapsed");
-                        console.log("Level 3");
-                        console.warn("More of level 3");
-                        console.groupEnd();
-                        console.log("Back to level 2");
-                        console.groupEnd();
-                        console.log("Back to the outer level");
-                    </code></pre>
-                    <img src="images/doOutputGrouped.png" />
-                    <aside class="notes">
-                        Grouping things simply indents output until end group.
-                    </aside>
-                </section>
+                <section data-markdown="1-output-groups.md"></section>
             </section>
 
             <section>
@@ -127,18 +73,8 @@
                     <h2>Measure and Count Executions</h2>
                 </section>
 
-                <section>
-                    <p>Timers</p>
-                    <pre><code class="js" data-noescape data-trim>
-    
-                        </code></pre>
-                    <p class="fragment">
-                        <img src="images/doTimers.png" />
-                    </p>
-                    <aside class="notes">
-                        Timers will also add an annotation to the performance timeline.
-                    </aside>
-                </section>
+                <section data-markdown="1-timers.md"></section>
+                <section data-markdown="2-timers.md"></section>
 
                 <section>
                     <p>Hit counts</p>

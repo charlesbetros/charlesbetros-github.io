@@ -4,7 +4,7 @@
 console.log("This is as basic as it gets.");
 console.info("An alias for console.log().");
 console.warn("You have no chance to survive Make your time.");
-console.error("All your base are belong to us!")
+console.error("All your base are belong to us!");
 ```
 
 ![Console text output](./images/doOutputText.png "Constant Strings")
